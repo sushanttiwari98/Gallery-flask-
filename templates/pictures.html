@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title%} Pics {% endblock title%}
+{% block body %}
+
+<div class="container my-3">
+    <h2>Pictures</h2>
+    {% for pic in images %}
+
+        <img src="{{url_for('static', filename=pic)}}" alt="{{pic}}">
+
+    {% endfor %}
+</div>
+
+{% endblock body %}

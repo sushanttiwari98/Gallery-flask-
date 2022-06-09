@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title%} Home {% endblock title%}
+{% block body %}
+
+    <form class="container my-3" method="POST" enctype='multipart/form-data'>
+        <!--<div class="input-group container mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+            
+        </div>-->
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+    {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+    {% endif %}
+    
+  
+
+{% endblock body %}
